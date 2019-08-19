@@ -61,8 +61,8 @@ def send_mail(message,email_subject,email_to):
 	msg['From'] = email_address
 	msg['To'] = email_to
 	msg.set_content(message)
-
-	with smtplib.SMTP_SSL('smtp.gmail.com',465) as smtp:  #Adding the gmail email server(creating smtp server with Google)
+	#Adding the gmail email server(creating smtp server with Google)
+	with smtplib.SMTP_SSL('smtp.gmail.com',465) as smtp:  
     
 		smtp.login(email_address,email_pass)
     
@@ -79,13 +79,3 @@ web_scraper()
 time.sleep(5)
 
 send_mail(web_scraper(),email_subject,to_email_address)
-
-
-
-
-
-
-
-
-
-
